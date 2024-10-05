@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/views/shared/reset.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/views/shared/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/views/shared/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/views/shared/footer.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
+    
+</head>
+<body>
+    <header class="header">
+        <div class="fixed-container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/"><img class="header__logo--image logo-team logo-big" src="~/image/logo/logo-team.png" alt="Логотип команды"></a>
+                    <a href="/"><img class="header__logo--image logo-company logo-big" src="~/image/logo/logo-company.png" alt="Логотип компании"></a>
+
+                    <a href="/"><img class="header__logo--image logo-team logo-small" src="~/image/logo/logo-team-icon.svg" alt="Логотип команды"></a>
+                    <a href="/"><img class="header__logo--image logo-company logo-small" src="~/image/logo/logo-company-icon.svg" alt="Логотип компании"></a>
+                </div>
+                <div class="header__nav">
+                    <button class="menu-toggle" type="button">&#9776;</button>
+                    <nav class="nav-menu">
+                        <ul class="header__menu">
+                            <li class="header__menu--item"><a class="header__menu--link" href="/">Главная</a></li>
+                            <li class="header__menu--item"><a class="header__menu--link" href="/product">Страховой <br> продукт-управление</a></li>
+                            <li class="header__menu--item"><a class="header__menu--link" href="/buy-product">Страховой <br> продукт-продажи</a></li>
+                            <li class="header__menu--item"><a class="header__menu--link" href="/order">Страховые <br> договора</a></li>
+                        </ul>
+                    </nav>
+                    <button class="header__menu--button button-black" type="button">Отчёты</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="fixed-container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <h2 class="footer__title">РАЗРАБОТАНО КОМАНДОЙ ЛИДЕРЫ ДЛЯ КОМПАНИИ СОГЛАСИЕ</h2>
+        </div>
+    </footer>
+
+    <script src="~/js/views/shared/header.js"></script>
+    <script src="~/js/views/shared/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
